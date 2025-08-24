@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p id="login">PLZ LOGIN</p>
+    <form id="form">
+      username<br><br>
+      <input name="username" id="username" type="text">
+      <br><br>
+      password<br><br>
+      <input name="password" type="password" id="password">
+      <br><br>
+      <button type="submit">Login</button>
+    </form>
+    <script>
+      const form = document.querySelector("#form");
+      form.onsubmit = function(){
+        var username = document.querySelector("#username").value;
+        var password = document.querySelector("#password").value;
+
+         if(username=="admin" && password=="12345"){
+        document.getElementById("login").innerHTML="WELCOME ADMIN";
+      } else if(username=="vendor" && password=="1235"){
+        document.getElementById("login").innerHTML="WELCOME VENDOR";
+      } else if(username=="customer" && password=="1345"){
+        document.getElementById("login").innerHTML="WELCOME CUSTOMER";
+      } else {
+        document.getElementById("login").innerHTML="PLZ LOGIN";
+      }
+
+        var url = "http://localhost:8080";
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST",url,true);
+        ajax.send("username="+username+"&password="+password);
+
+        // getting response
+        ajax.onreadystatechange = ()=>{
+          if(ajax.readyState == 4)
+          {
+            console.log(ajax.responseText);
+          }
+        }
+        return false;
+      }
+     
+      
+    </script>
+</body>
+</html>
