@@ -1,0 +1,97 @@
+/* General reset and body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f6d365, #fda085, #84fab0, #8fd3f4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Login message styling (top) */
+#login {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Container for the form */
+form {
+    background-color: #ffffffdd; /* semi-transparent white */
+    padding: 30px 50px;          /* smaller height padding */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 420px;                /* slightly wider */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+form label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+/* Input fields - modern style */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;         /* slightly smaller */
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 10px rgba(255,126,95,0.4);
+}
+
+/* Button styling */
+button {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 12px 0;             /* slightly smaller */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #feb47b;
+}
+
+/* Responsive for mobile */
+@media (max-width: 420px) {
+    form {
+        width: 90%;
+        padding: 25px 20px;
+    }
+}
